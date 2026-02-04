@@ -48,7 +48,6 @@ nav {
 }
 
 nav ul {
-    
     list-style: none;
     display: flex;
     gap: 20px;
@@ -56,7 +55,6 @@ nav ul {
 }
 
 nav ul li a {
-    
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -75,7 +73,6 @@ nav ul li a:hover {
     display: flex;
     width: 100%;
     gap: 10px;
-    
 }
 
 .input-container {
@@ -182,18 +179,17 @@ nav ul li a:hover {
     color: #ffe600;
 }
 
-
 /* Caixa p da página Sobre */
 .about-text-box {
-    max-width: 1100px;       /* aumenta a largura da caixa */
-    padding: 25px 35px;     /* espaçamento interno maior */
+    max-width: 1100px;
+    padding: 25px 35px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 10px;
     transition: all 0.4s ease;
 }
 
 .about-text-box p {
-    font-size: 1em;             /* fonte menor, mais legível */
+    font-size: 1em;
     color: #fff;
     margin: 0;
 }
@@ -202,9 +198,6 @@ nav ul li a:hover {
     background-color: rgba(0,0,0,0.5);
     transform: scale(1.02);
 }
-
-
-
 
 /* ================= SOCIAL SIDEBAR ================= */
 .social-sidebar {
@@ -232,6 +225,57 @@ nav ul li a:hover {
     color: #ffe600;
 }
 
+/* ================= TEAM TILES ================= */
+/* ================= TEAM TILES COMPACTO ================= */
+#main-content {
+    position: relative;
+    z-index: 2;
+    margin-top: -180px; /* flutua sobre a hero */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* espaçamento entre os tiles */
+}
+
+.team-card {
+    background: transparent; /* sem fundo grande */
+    padding: 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px); /* leve flutuação */
+}
+
+.team-card .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fd4646, #02ac70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.team-card h3 {
+    margin: 5px 0 2px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.team-card .cargo {
+    display: block;
+    font-size: 0.85em;
+    color: #ffe600;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    display: none; /* esconde a descrição para simplificar */
+}
 
 
 /* ================= FOOTER ================= */
@@ -290,6 +334,24 @@ footer .text-center {
     .text-box h1 { font-size: 2em; }
     .text-box h2 { font-size: 1.2em; }
     .social-icon { width: 40px; height: 40px; font-size: 1.5em; }
+    #main-content { margin-top: -60px; } /* ajuste para mobile */
     footer .row { flex-direction: column; align-items: flex-start; }
     hr.visible-xs { display: block; width: 100%; border: 1px solid #555; margin: 15px 0; }
+}
+
+/* ================= AVATAR (BONEQUINHO) ================= */
+.avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fd4646, #02ac70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar i {
+    font-size: 40px;
+    color: #fff;
 }
