@@ -361,9 +361,10 @@ nav ul li a:hover {
     right: 40px;
     top: 50%;
     transform: translateY(-50%);
-    width: 420px;
+    width: 600px;
     max-height: 70vh;
     overflow-y: auto;
+    
 
     
 
@@ -376,13 +377,14 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: 12px;
-
+    margin-bottom: 30px; 
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden; /* IMPORTANTE para a imagem */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
     transition: transform 0.3s, box-shadow 0.3s;
+    
 }
 
 .result-card:hover {
@@ -391,8 +393,8 @@ nav ul li a:hover {
 }
 
 .result-card img {
-    width: 150px;
-    height: 100px;
+    width: 600px;
+    height: 150px;
     object-fit: cover;
     border-radius: 10px;
 }

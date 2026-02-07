@@ -1,9 +1,10 @@
+// ================= ELEMENTOS DO DOM =================
 const input = document.getElementById('conditionInput');
 const btnSearch = document.getElementById('btnSearch');
 const btnClear = document.getElementById('btnclear');
 const resultsDiv = document.getElementById('results');
 
-// Função para carregar o JSON
+// ================= FUNÇÃO PARA CARREGAR O JSON =================
 function fetchData(callback) {
     fetch('travel_recommendation_api.json')
         .then(response => {
@@ -17,8 +18,8 @@ function fetchData(callback) {
         });
 }
 
-// Evento botão pesquisar
-btnSearch.addEventListener('click', () => {
+// ================= FUNÇÃO DE PESQUISA =================
+function searchResults() {
     const keyword = input.value.trim().toLowerCase();
 
     if (!keyword) {
@@ -27,7 +28,7 @@ btnSearch.addEventListener('click', () => {
     }
 
     fetchData(data => {
-        let filteredResults = [];
+        const filteredResults = [];
 
         // Filtrar cidades
         data.countries.forEach(country => {
@@ -67,7 +68,7 @@ btnSearch.addEventListener('click', () => {
             }
         });
 
-        // Exibir resultados em cards
+        // Exibir resultados
         resultsDiv.innerHTML = '';
         if (filteredResults.length === 0) {
             resultsDiv.innerHTML = '<p>Nenhum resultado encontrado.</p>';
@@ -87,6 +88,16 @@ btnSearch.addEventListener('click', () => {
             });
         }
     });
+}
+
+// ================= EVENTOS =================
+
+// Botão pesquisar
+btnSearch.addEventListener('click', searchResults);
+
+// Ativar pesquisa ao pressionar Enter
+input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') searchResults();
 });
 
 // Botão limpar
